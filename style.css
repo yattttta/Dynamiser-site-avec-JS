@@ -1,0 +1,22 @@
+body {
+    background-color: #907123;
+    font-family: 'Lato', sans-serif;
+}    
+
+.recolor {
+    background-image : linear-gradient(to right, lightgrey 50%, white 50%);
+    height: 100vh;
+    margin-top : 30px;
+    margin-left : 100px;
+    margin-right : 100px;
+    margin-bottom: 30px;
+}
+.new-game {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 35px;
+}
+.bi-plus-circle {
+    color: red;
+    padding-right: 8px;
+}
