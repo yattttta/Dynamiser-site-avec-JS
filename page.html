@@ -11,14 +11,50 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row ">
-            <div class="col-11 recolor">
-                <div class="new-game">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                    </svg>
-                    <span>NEW GAME</span>
+
+        <!--boite bicolor-->
+        <div class="row d-flex justify-content-center">
+            <div class="col-11 recolor my-4">
+
+                <!--haut de page-->
+                <div class="row new-game">
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>
+                        <span>NEW GAME</span>
+                    </div>
+                </div>  
+                
+                <!--Players-->
+                <div class="row players align-items-center">
+                    <div class="col-6 player1">
+                           PLAYER 1 
+                    </div>
+                    <div class="col-6 player2">
+                            PLAYER 2
+                    </div>
+                </div>
+
+                <!--score et dé-->
+                <div class="row justify-content-evenly scores">
+                    <!--score joueur 1-->
+                    <div class="col-1 score-p1 m-3"></div>
+                    <!--score joueur 2-->
+                    <div class="col-1 dice m-3"></div>
+                    <!--score joueur 3-->
+                    <div class="col-1 score-p2 m-3"></div>
+                </div>
+
+                <!--current scores et actions-->
+                <div class="row justify-content-evenly current-scores">
+                    <!--current score joueur 1-->
+                    <div class="col-1 current-score1 m-3"></div>
+                    <!--jouer le dé et ajouter le score-->
+                    <div class="col-1 roll-dice m-3"></div>
+                    <!--current score joueur 2-->
+                    <div class="col-1 current-score2 m-3"></div>
                 </div>
             </div>
         </div>

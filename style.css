@@ -4,12 +4,9 @@ body {
 }    
 
 .recolor {
-    background-image : linear-gradient(to right, lightgrey 50%, white 50%);
+    background-image : linear-gradient(to left, #F5F5F5 50%, #F5F5DC 50%);
     height: 100vh;
-    margin-top : 30px;
-    margin-left : 100px;
-    margin-right : 100px;
-    margin-bottom: 30px;
+
 }
 .new-game {
     text-align: center;
@@ -19,4 +16,22 @@ body {
 .bi-plus-circle {
     color: red;
     padding-right: 8px;
+}
+.players {
+    height: 20vh;
+    text-align: center;
+    font-size: 53px;
+}
+.scores, .current-scores {
+    height: 25vh;   
+}
+.dice {
+    background-color: white;
+}
+.score-p1, .dice, .score-p2, .current-score1, .roll-dice, .current-score2 {
+    width: 25vh;
+}
+.players, .scores, .score-p1, .dice, .score-p2, .current-scores, .current-score1, .roll-dice, .current-score2{
+    border: solid;
+    margin-top: 20px;
 }
