@@ -1,37 +1,75 @@
 body {
     background-color: #907123;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', 'sans serif'
 }    
 
 .recolor {
     background-image : linear-gradient(to left, #F5F5F5 50%, #F5F5DC 50%);
-    height: 100vh;
+    height: 95vh;
 
 }
+
+/*Haut de page*/
 .new-game {
     text-align: center;
     padding-top: 50px;
     font-size: 35px;
 }
 .bi-plus-circle {
-    color: red;
+    color: #FF6961;
     padding-right: 8px;
 }
+
+/*players*/
 .players {
     height: 20vh;
     text-align: center;
     font-size: 53px;
 }
-.scores, .current-scores {
+.player1, .player2, .vide {
+    width: 30vh;
+}
+
+/*scores et dé*/
+.globalScores, .current-scores {
     height: 25vh;   
+}
+.globalScore1, .dice, .globalScore2, .current-score1, .roll-hold, .current-score2 {
+    width: 25vh;
+}
+.globalScore1, .globalScore2 {
+    font-size: 135px;
+    color: #FF6961;
 }
 .dice {
     background-color: white;
 }
-.score-p1, .dice, .score-p2, .current-score1, .roll-dice, .current-score2 {
-    width: 25vh;
+.current-score1, .current-score2 {
+    background-color: #FF6961
 }
-.players, .scores, .score-p1, .dice, .score-p2, .current-scores, .current-score1, .roll-dice, .current-score2{
+.current {
+    font-size: 35px;
+}
+.currentScore1, .currentScore2 {
+    color: white;
+    font-size: 44px;
+}
+.roll-hold {
+    font-size: 20px;
+}
+.bi-arrow-repeat, .bi-box-arrow-in-down {
+    color: #FF6961;
+}
+
+
+
+
+
+
+
+
+
+/*.players, .player1, .vide, .player2, .globalScores, .globalScore1, .dice, .globalScore2, .current-scores, .current-score1, .currentScore1, .currentScore2, .current, .roll-hold, .current-score2, .roll, .hold{
     border: solid;
     margin-top: 20px;
 }

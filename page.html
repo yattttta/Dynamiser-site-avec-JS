@@ -17,9 +17,9 @@
             <div class="col-11 recolor my-4">
 
                 <!--haut de page-->
-                <div class="row new-game">
-                    <div class="col">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                <div class="new-game row">
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="currentColor" class="bi bi-plus-circle" id="newGame" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                         </svg>
@@ -28,37 +28,61 @@
                 </div>  
                 
                 <!--Players-->
-                <div class="row players align-items-center">
-                    <div class="col-6 player1">
+                <div class="players row d-flex align-items-end justify-content-evenly">
+                    <div class="player1 col-1 m-0 ms-2">
                            PLAYER 1 
                     </div>
-                    <div class="col-6 player2">
+                    <div class="vide col-1"></div>
+                    <div class="player2 col-1 m-0 me-2">
                             PLAYER 2
                     </div>
                 </div>
 
                 <!--score et dé-->
-                <div class="row justify-content-evenly scores">
+                <div class="globalScores row d-flex justify-content-evenly">
                     <!--score joueur 1-->
-                    <div class="col-1 score-p1 m-3"></div>
+                    <div class="globalScore1 col-1 m-3 d-flex align-items-center justify-content-center" id="globalScore1">43</div>
                     <!--score joueur 2-->
-                    <div class="col-1 dice m-3"></div>
+                    <div class="dice col-1 m-3"></div>
                     <!--score joueur 3-->
-                    <div class="col-1 score-p2 m-3"></div>
+                    <div class="globalScore2 col-1 m-3 d-flex align-items-center justify-content-center" id="globalScore2">72</div>
                 </div>
 
                 <!--current scores et actions-->
-                <div class="row justify-content-evenly current-scores">
+                <div class="current-scores row justify-content-evenly">
                     <!--current score joueur 1-->
-                    <div class="col-1 current-score1 m-3"></div>
+                    <div class="current-score1 col-1 row m-3">
+                        <div class="current col-12 d-flex justify-content-center align-items-end">current</div>
+                        <div class="currentScore1 col-12 d-flex justify-content-center mb-1" id="currentScore1">5</div>
+                    </div>
                     <!--jouer le dé et ajouter le score-->
-                    <div class="col-1 roll-dice m-3"></div>
+                    <div class="roll-hold col-1 row m-3 d-flex justify-content-center">
+                        <div class="roll col-12 d-flex justify-content-center align-items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" fill="currentColor" class="bi bi-arrow-repeat me-4 mt-3" viewBox="0 0 16 16">
+                                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                            </svg>
+                            <span class="mt-4">ROLL DICE</span>
+                        </div>
+                        <div class="hold col-12 d-flex justify-content-center align-items-end mb-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" fill="currentColor" class="bi bi-box-arrow-in-down me-4 mb-0" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+                                <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                            </svg>                           
+                            <span class="mb-2">HOLD</span>
+                        </div>
+                    </div>
                     <!--current score joueur 2-->
-                    <div class="col-1 current-score2 m-3"></div>
+                    <div class="current-score2 row col-1 m-3">
+                        <div class="current col-12 d-flex justify-content-center align-items-end">current</div>
+                        <div class="currentScore2 col-12 d-flex justify-content-center mb-1" id="currentScore2">5</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> 
+     
 </body>
