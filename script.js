@@ -22,6 +22,8 @@ function calc() {
 addCurrentScore.addEventListener('click', calc)
 })
 
+
+
 //Ajouter current score à global score
 const holdScore = document.getElementById('hold')
 function hold() {
