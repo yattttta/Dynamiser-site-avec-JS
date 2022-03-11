@@ -27,8 +27,9 @@ body {
     font-size: 53px;
 }
 .player1, .player2, .vide {
-    width: 30vh;
+    width: 35vh;
 }
+
 /*dés*/
 .diceBox {
     background-color: white;
@@ -37,7 +38,7 @@ body {
     width: 100%;
     height: 95%;
 }
-#dice1, #dice2, #dice3, #dice4, #dice5, #dice6 {
+#dice1, #dice2, #dice3, #dice4, #dice5, #dice6, #dot2 {
     display: none;
 }
 /*scores*/
@@ -65,7 +66,7 @@ body {
 .roll-hold {
     font-size: 20px;
 }
-.dice, .bi-arrow-repeat, .bi-box-arrow-in-down {
+.dice, .bi-arrow-repeat, .bi-box-arrow-in-down, .bi-circle-fill {
     color: #FF6961;
 }
 
