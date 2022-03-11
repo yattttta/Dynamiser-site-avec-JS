@@ -21,3 +21,14 @@ function calc() {
 }
 addCurrentScore.addEventListener('click', calc)
 })
+
+//Ajouter current score à global score
+const holdScore = document.getElementById('hold')
+function hold() {
+    let currentScore = parseInt($('#currentScore1').html())
+    let globalScore = parseInt($('#globalScore1').html())
+    let calcGlobalScore = currentScore + globalScore
+    $('#globalScore1').html(calcGlobalScore.toString())
+    $('#currentScore1').html('0')
+}
+holdScore.addEventListener('click', hold)
