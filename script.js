@@ -13,11 +13,21 @@ newGame.addEventListener('click', restart)
 //Ajouter current score 1
 const addCurrentScore = document.getElementById('roll')
 function calc() {
+    const dice = [,$('#dice1'), $('#dice2'), $('#dice3'), $('#dice4'), $('#dice5'), $('#dice6')]
     let currentScore = parseInt($('#currentScore1').html())
-    let random = Math.floor((Math.random() * 6) + 1)
-    let result = currentScore + random
-    $('#currentScore1').html(result.toString())
+    let random = Math.ceil((Math.random() * 6) + 1)
+    if (random > 6) {
+        random === 6
+    }
+    let result = currentScore + random  
+    
+    dice.forEach(function(number) {
+        dice[random].show()
+        number.hide()     
+    })
     console.log(random)
+    $('#currentScore1').html(result.toString())
+    
 }
 addCurrentScore.addEventListener('click', calc)
 })

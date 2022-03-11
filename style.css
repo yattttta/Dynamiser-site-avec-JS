@@ -37,8 +37,9 @@ body {
     width: 100%;
     height: 95%;
 }
-
-
+#dice1, #dice2, #dice3, #dice4, #dice5, #dice6 {
+    display: none;
+}
 /*scores*/
 .globalScores, .current-scores {
     height: 25vh;   
