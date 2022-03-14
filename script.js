@@ -17,10 +17,26 @@ $(document).ready(() => {
     }
     newGame.addEventListener('click',hide)
     newGame.addEventListener('click',restart)
+    newGame.addEventListener('click', player1)
 
-    //Ajouter current score 1
-    const addCurrentScore = document.getElementById('roll')
-    function calc() {
+
+
+    //Changement de joueur
+    function change1() {
+        setTimeout(() => {
+            player1() 
+        }, 1000)
+    }
+    function change2() {
+        setTimeout(() => {
+            player2() 
+        }, 1000) 
+        
+    }       
+        
+    //calculer currentScore1 et l'ajouter
+    const addCurrentScore1 = document.getElementById('roll')
+    function calc1() {           
         let currentScore = parseInt($('#currentScore1').html())
         let random = Math.floor((Math.random() * 6) + 1)
         let i = random - 1
@@ -31,24 +47,82 @@ $(document).ready(() => {
             number.hide()     
         })
         if (random > 1) {
-            $('#currentScore1').html(result.toString())
+            return $('#currentScore1').html(result.toString())
         } else {
             $('#dice1').show()
             $('#currentScore1').html('0')
-        }          
+            change2() 
+            addCurrentScore1.removeEventListener('click', calc1)
+        }
     }
-    addCurrentScore.addEventListener('click', calc)
+    
 
-    //Ajouter current score à global score
-    const holdScore = document.getElementById('hold')
-    function hold() {
+    
+        
+    const addCurrentScore2 = document.getElementById('roll')
+    function calc2() {            
+        let currentScore = parseInt($('#currentScore2').html())
+        let random = Math.floor((Math.random() * 6) + 1)
+        let i = random - 1
+        console.log(random)
+        let result = currentScore + random  
+        dice.forEach(function(number) {
+            dice[i].show()
+            number.hide()     
+        })
+        if (random > 1) {
+            $('#currentScore2').html(result.toString())
+        } else {
+            $('#dice1').show()
+            $('#currentScore2').html('0')
+            change1() 
+            addCurrentScore2.removeEventListener('click', calc2)
+        }
+    }
+
+    //Calculer et ajouter currentScore1 à globalScore1    
+    const holdScore1 = document.getElementById('hold')
+    function hold1() {
         let currentScore = parseInt($('#currentScore1').html())
         let globalScore = parseInt($('#globalScore1').html())
         let calcGlobalScore = currentScore + globalScore
         $('#globalScore1').html(calcGlobalScore.toString())
         $('#currentScore1').html('0')
-    }
-    holdScore.addEventListener('click', hold)
-    holdScore.addEventListener('click', hide)
+        change2()      
+        }     
+    
+    //Ajouter current score2 à global score2         
+    const holdScore2 = document.getElementById('hold')      
+    function hold2() {               
+        let currentScore = parseInt($('#currentScore2').html())
+        let globalScore = parseInt($('#globalScore2').html())
+        let calcGlobalScore = currentScore + globalScore
+        $('#globalScore2').html(calcGlobalScore.toString())
+        $('#currentScore2').html('0')
+        change1()       
+    }    
 
+        
+    
+    function player1() {
+        hide()
+        $('#dot1').show()
+        $('#dot2').hide() 
+        addCurrentScore2.removeEventListener('click',calc2)
+        addCurrentScore1.addEventListener('click', calc1) 
+        holdScore2.removeEventListener('click', hold2)              
+        holdScore1.addEventListener('click', hold1)
+        holdScore1.addEventListener('click', hide)
+    }
+
+    function player2() {      
+        hide()
+        $('#dot2').show()
+        $('#dot1').hide()        
+        addCurrentScore1.removeEventListener('click',calc1)
+        addCurrentScore2.addEventListener('click', calc2)
+        holdScore1.removeEventListener('click', hold1)
+        holdScore2.addEventListener('click', hold2)
+        holdScore2.addEventListener('click', hide)
+    }
 })    
