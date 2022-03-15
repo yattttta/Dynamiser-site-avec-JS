@@ -24,12 +24,12 @@ $(document).ready(() => {
     function change1() {
         setTimeout(() => {
             player1() 
-        }, 400)
+        }, 500)
     }
     function change2() {
         setTimeout(() => {
             player2() 
-        }, 400) 
+        }, 500) 
         
     }       
         
