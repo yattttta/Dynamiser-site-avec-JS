@@ -20,17 +20,16 @@ $(document).ready(() => {
     newGame.addEventListener('click', player1)
 
 
-
     //Changement de joueur
     function change1() {
         setTimeout(() => {
             player1() 
-        }, 1000)
+        }, 400)
     }
     function change2() {
         setTimeout(() => {
             player2() 
-        }, 1000) 
+        }, 400) 
         
     }       
         
@@ -40,12 +39,12 @@ $(document).ready(() => {
         let currentScore = parseInt($('#currentScore1').html())
         let random = Math.floor((Math.random() * 6) + 1)
         let i = random - 1
-        console.log(random)
         let result = currentScore + random  
         dice.forEach(function(number) {
             dice[i].show()
             number.hide()     
         })
+        //Si le dé fait 1
         if (random > 1) {
             return $('#currentScore1').html(result.toString())
         } else {
@@ -56,20 +55,18 @@ $(document).ready(() => {
         }
     }
     
-
-    
-        
+     //Calculer currentScore2 et l'ajouter   
     const addCurrentScore2 = document.getElementById('roll')
     function calc2() {            
         let currentScore = parseInt($('#currentScore2').html())
         let random = Math.floor((Math.random() * 6) + 1)
         let i = random - 1
-        console.log(random)
         let result = currentScore + random  
         dice.forEach(function(number) {
             dice[i].show()
             number.hide()     
         })
+        //Si le dé fait 1
         if (random > 1) {
             $('#currentScore2').html(result.toString())
         } else {
@@ -80,7 +77,7 @@ $(document).ready(() => {
         }
     }
 
-    //Calculer et ajouter currentScore1 à globalScore1    
+    //Ajouter currentScore1 à globalScore1    
     const holdScore1 = document.getElementById('hold')
     function hold1() {
         let currentScore = parseInt($('#currentScore1').html())
@@ -91,7 +88,7 @@ $(document).ready(() => {
         change2()      
         }     
     
-    //Ajouter current score2 à global score2         
+    //Ajouter currentScore2 à globalScore2         
     const holdScore2 = document.getElementById('hold')      
     function hold2() {               
         let currentScore = parseInt($('#currentScore2').html())
@@ -100,9 +97,24 @@ $(document).ready(() => {
         $('#globalScore2').html(calcGlobalScore.toString())
         $('#currentScore2').html('0')
         change1()       
-    }    
-
-        
+    } 
+    
+    //Fonction gagnant à 100 points
+    function winner() {
+        let globalScore1 = parseInt($('#globalScore1').html())
+        let globalScore2 = parseInt($('#globalScore2').html())
+        if (globalScore1 >= 100) {
+            alert('Joueur 1 gagne la partie !')
+            hide()
+            restart()
+            player1()
+        } else if (globalScore2 >= 100) {
+            alert('Joueur 2 gagne la partie !')
+            hide()
+            restart()
+            player1()
+        }
+    }
     
     function player1() {
         hide()
@@ -113,6 +125,7 @@ $(document).ready(() => {
         holdScore2.removeEventListener('click', hold2)              
         holdScore1.addEventListener('click', hold1)
         holdScore1.addEventListener('click', hide)
+        winner()
     }
 
     function player2() {      
@@ -124,5 +137,6 @@ $(document).ready(() => {
         holdScore1.removeEventListener('click', hold1)
         holdScore2.addEventListener('click', hold2)
         holdScore2.addEventListener('click', hide)
+        winner()
     }
 })    
